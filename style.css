@@ -1,150 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    background:#f4f7f2;
-    color:#333;
-    line-height:1.6;
+html{
+    scroll-behavior:smooth;
 }
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7faf7;
+    color:#333;
+    line-height:1.7;
+}
+
+/* Cabeçalho */
 
 header{
-    background:#2e7d32;
-    color:white;
-    padding:20px;
-    text-align:center;
     position:sticky;
     top:0;
+    background:white;
+    padding:20px;
+    border-bottom:1px solid #e5e5e5;
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+    z-index:1000;
 }
 
-nav{
-    margin-top:15px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#c8e6c9;
-}
-
-.banner{
-    height:450px;
-    background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    ),
-    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-}
-
-.banner-conteudo{
-    max-width:700px;
-}
-
-.banner h2{
-    font-size:3rem;
+h1{
+    color:#2e7d32;
     margin-bottom:15px;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-    padding:60px 0;
-}
-
-.container h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:#2e7d32;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+nav{
+    display:flex;
+    flex-wrap:wrap;
     gap:20px;
 }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#2e7d32;
+    left:0;
+    bottom:-5px;
+    transition:.4s;
 }
 
-.card h3{
+nav a:hover{
     color:#2e7d32;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Seções */
+
+section{
+    padding:60px 40px;
+    max-width:1100px;
+    margin:auto;
+
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp .9s ease forwards;
+}
+
+section:nth-child(2){animation-delay:.1s;}
+section:nth-child(3){animation-delay:.2s;}
+section:nth-child(4){animation-delay:.3s;}
+section:nth-child(5){animation-delay:.4s;}
+section:nth-child(6){animation-delay:.5s;}
+
+h2{
+    color:#2e7d32;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+h3{
+    margin-top:20px;
     margin-bottom:10px;
 }
 
-.pergunta{
-    text-align:center;
-    margin-bottom:20px;
-    font-weight:bold;
+p, li{
+    color:#555;
 }
 
+ul{
+    padding-left:25px;
+}
+
+/* Formulário */
+
 form{
-    max-width:600px;
-    margin:auto;
+    margin-top:20px;
 }
 
 input,
 textarea{
     width:100%;
-    padding:12px;
+    padding:14px;
     margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:5px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    transition:.3s;
+    font-size:15px;
 }
 
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#4caf50;
+    box-shadow:0 0 15px rgba(76,175,80,.2);
+}
+
+/* Botões */
+
 button{
-    width:100%;
-    padding:12px;
-    border:none;
     background:#2e7d32;
     color:white;
-    border-radius:5px;
+    border:none;
+    padding:14px 28px;
+    border-radius:12px;
     cursor:pointer;
+    font-weight:600;
+    transition:.35s;
 }
 
 button:hover{
-    background:#1b5e20;
+    transform:translateY(-3px);
+    background:#388e3c;
+    box-shadow:0 10px 25px rgba(46,125,50,.25);
 }
 
-footer{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:20px;
+button:active{
+    transform:scale(.98);
 }
+
+/* Rodapé */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#2e7d32;
+    color:white;
+    margin-top:50px;
+}
+
+/* Animações */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Responsividade */
 
 @media(max-width:768px){
 
-    .banner h2{
-        font-size:2rem;
+    header{
+        text-align:center;
     }
 
-    nav a{
-        display:block;
-        margin:10px 0;
+    nav{
+        justify-content:center;
+    }
+
+    section{
+        padding:40px 20px;
+    }
+
+    h2{
+        font-size:1.7rem;
     }
 
 }
