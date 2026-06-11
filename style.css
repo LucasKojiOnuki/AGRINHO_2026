@@ -195,4 +195,58 @@ footer{
         font-size:1.7rem;
     }
 
+
+}
+header{
+    position:sticky;
+    top:0;
+    background:#2e7d32;
+    padding:20px;
+    box-shadow:0 2px 15px rgba(0,0,0,.15);
+    z-index:1000;
+}
+
+header h1{
+    color:white;
+}
+
+nav a{
+    color:white;
+}
+
+nav a::after{
+    background:white;
+}
+
+nav a:hover{
+    color:#dcedc8;
+}
+
+.imagem-secao{
+    width:100%;
+    max-width:800px;
+    display:block;
+    margin:25px auto;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.imagem-secao:hover{
+    transform:scale(1.02);
+}
+
+
+.balao{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    margin-top:20px;
+    transition:.4s;
+}
+
+.balao:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
