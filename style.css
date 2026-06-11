@@ -12,8 +12,8 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#f7faf7;
-    color:#333;
+    background:#35a03b;
+    color:#ffffff;
     line-height:1.7;
 }
 
@@ -22,10 +22,10 @@ body{
 header{
     position:sticky;
     top:0;
-    background:white;
+    background:rgb(50, 167, 46);
     padding:20px;
-    border-bottom:1px solid #e5e5e5;
-    box-shadow:0 2px 15px rgba(0,0,0,.05);
+    border-bottom:1px solid #35a03b;
+    box-shadow:0 2px 15px rgba(1, 46, 5, 0.24);
     z-index:1000;
 }
 
@@ -194,59 +194,3 @@ footer{
     h2{
         font-size:1.7rem;
     }
-
-
-}
-header{
-    position:sticky;
-    top:0;
-    background:#2e7d32;
-    padding:20px;
-    box-shadow:0 2px 15px rgba(0,0,0,.15);
-    z-index:1000;
-}
-
-header h1{
-    color:white;
-}
-
-nav a{
-    color:white;
-}
-
-nav a::after{
-    background:white;
-}
-
-nav a:hover{
-    color:#dcedc8;
-}
-
-.imagem-secao{
-    width:100%;
-    max-width:800px;
-    display:block;
-    margin:25px auto;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-    transition:.4s;
-}
-
-.imagem-secao:hover{
-    transform:scale(1.02);
-}
-
-
-.balao{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    margin-top:20px;
-    transition:.4s;
-}
-
-.balao:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-}
