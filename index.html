@@ -1,207 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte, Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    const formulario =
-    document.getElementById("formContato");
+            <title>Agro Forte, Futuro Sustentável</title>
 
-    const mensagem =
-    document.getElementById("sucesso");
+                <link rel="stylesheet" href="style.css">
 
-    formulario.addEventListener(
-    "submit",
-    function(event){
+                </head>
+                <body>
 
-        event.preventDefault();
+                <header>
 
-            mensagem.style.display = "block";
+                    <h1>Agro Forte, Futuro Sustentável</h1>
 
-                formulario.reset();
+                        <nav>
+                                <a href="#inicio">Início</a>
+                                        <a href="#producao">Produção Agrícola</a>
+                                                <a href="#sustentabilidade">Sustentabilidade</a>
+                                                        <a href="#desafios">Desafios</a>
+                                                                <a href="#solucoes">Soluções</a>
+                                                                        <a href="#contato">Contato</a>
+                                                                            </nav>
 
-                    setTimeout(() => {
-                            mensagem.style.display = "none";
-                                }, 5000);
+                                                                            </header>
 
-                                });
+                                                                            <section id="inicio">
 
-                                </script>
-<body>
+                                                                                <h2>Introdução</h2>
 
-<header>
-    <h1>Agro Forte, Futuro Sustentável</h1>
+                                                                                    <p>
+                                                                                            O agronegócio é fundamental para a economia brasileira,
+                                                                                                    mas precisa crescer de forma sustentável para preservar
+                                                                                                            os recursos naturais das futuras gerações.
+                                                                                                                </p>
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#producao">Produção</a>
-        <a href="#sustentabilidade">Sustentabilidade</a>
-        <a href="#desafios">Desafios</a>
-        <a href="#solucoes">Soluções</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
+                                                                                                                </section>
 
-<section id="inicio" class="banner">
-    <div class="banner-conteudo">
-        <h2>Equilíbrio entre produção agrícola e meio ambiente</h2>
-        <p>Produzir mais preservando os recursos naturais das futuras gerações.</p>
-    </div>
-</section>
+                                                                                                                <section id="producao">
 
-<section id="introducao" class="container">
-    <h2>Introdução</h2>
+                                                                                                                    <div class="balao">
 
-    <p>
-        O agronegócio é um dos setores mais importantes da economia brasileira,
-        gerando empregos, renda e alimentos para o país e para o mundo.
-        Entretanto, o crescimento da produção deve ocorrer de forma sustentável,
-        preservando os recursos naturais e reduzindo impactos ambientais.
-    </p>
-</section>
+                                                                                                                            <h2>Produção Agrícola</h2>
 
-<section id="producao" class="container">
-    <h2>Produção Agrícola</h2>
+                                                                                                                                    <p>
+                                                                                                                                                O agronegócio movimenta a economia e utiliza tecnologias como:
+                                                                                                                                                        </p>
 
-    <div class="cards">
+                                                                                                                                                                <ul>
+                                                                                                                                                                            <li>Agricultura de Precisão</li>
+                                                                                                                                                                                        <li>Irrigação Inteligente</li>
+                                                                                                                                                                                                    <li>Drones Agrícolas</li>
+                                                                                                                                                                                                                <li>Energia Renovável</li>
+                                                                                                                                                                                                                        </ul>
 
-        <div class="card">
-            <h3>Importância Econômica</h3>
-            <p>
-                O agronegócio contribui significativamente para o PIB nacional
-                e para as exportações brasileiras.
-            </p>
-        </div>
+                                                                                                                                                                                                                            </div>
 
-        <div class="card">
-            <h3>Agricultura de Precisão</h3>
-            <p>
-                Uso de sensores, GPS e softwares para aumentar a produtividade.
-            </p>
-        </div>
+                                                                                                                                                                                                                            </section>
 
-        <div class="card">
-            <h3>Drones Agrícolas</h3>
-            <p>
-                Monitoram plantações e auxiliam no controle de pragas.
-            </p>
-        </div>
+                                                                                                                                                                                                                            <section id="sustentabilidade">
 
-    </div>
-</section>
+                                                                                                                                                                                                                                <div class="balao">
 
-<section id="sustentabilidade" class="container">
-    <h2>Sustentabilidade</h2>
+                                                                                                                                                                                                                                        <h2>Sustentabilidade</h2>
 
-    <div class="cards">
+                                                                                                                                                                                                                                                <p>
+                                                                                                                                                                                                                                                            Conservação do solo, redução de desperdícios
+                                                                                                                                                                                                                                                                        e uso consciente dos recursos naturais.
+                                                                                                                                                                                                                                                                                </p>
 
-        <div class="card">
-            <h3>Conservação do Solo</h3>
-            <p>
-                Técnicas que evitam erosão e preservam nutrientes.
-            </p>
-        </div>
+                                                                                                                                                                                                                                                                                    </div>
 
-        <div class="card">
-            <h3>Irrigação Inteligente</h3>
-            <p>
-                Reduz desperdícios e melhora a eficiência hídrica.
-            </p>
-        </div>
+                                                                                                                                                                                                                                                                                    </section>
 
-        <div class="card">
-            <h3>Energia Renovável</h3>
-            <p>
-                Uso de energia solar e eólica nas propriedades rurais.
-            </p>
-        </div>
+                                                                                                                                                                                                                                                                                    <section id="desafios">
 
-    </div>
-</section>
+                                                                                                                                                                                                                                                                                        <h2>Desafios Ambientais</h2>
 
-<section id="desafios" class="container">
-    <h2>Desafios Ambientais</h2>
+                                                                                                                                                                                                                                                                                            <ul>
+                                                                                                                                                                                                                                                                                                    <li>Desmatamento</li>
+                                                                                                                                                                                                                                                                                                            <li>Uso excessivo da água</li>
+                                                                                                                                                                                                                                                                                                                    <li>Emissão de carbono</li>
+                                                                                                                                                                                                                                                                                                                        </ul>
 
-    <div class="cards">
+                                                                                                                                                                                                                                                                                                                        </section>
 
-        <div class="card">
-            <h3>Desmatamento</h3>
-            <p>Redução da biodiversidade e degradação ambiental.</p>
-        </div>
+                                                                                                                                                                                                                                                                                                                        <section id="solucoes">
 
-        <div class="card">
-            <h3>Uso Excessivo da Água</h3>
-            <p>Comprometimento dos recursos hídricos.</p>
-        </div>
+                                                                                                                                                                                                                                                                                                                            <div class="balao">
 
-        <div class="card">
-            <h3>Emissão de Carbono</h3>
-            <p>Aumento dos gases de efeito estufa.</p>
-        </div>
+                                                                                                                                                                                                                                                                                                                                    <h2>Soluções e Futuro</h2>
 
-    </div>
-</section>
+                                                                                                                                                                                                                                                                                                                                            <p>
+                                                                                                                                                                                                                                                                                                                                                        Agricultura regenerativa, energias limpas
+                                                                                                                                                                                                                                                                                                                                                                    e novas tecnologias para aumentar a produtividade
+                                                                                                                                                                                                                                                                                                                                                                                sem prejudicar o meio ambiente.
+                                                                                                                                                                                                                                                                                                                                                                                        </p>
 
-<section id="solucoes" class="container">
-    <h2>Soluções e Futuro</h2>
+                                                                                                                                                                                                                                                                                                                                                                                            </div>
 
-    <div class="cards">
+                                                                                                                                                                                                                                                                                                                                                                                            </section>
 
-        <div class="card">
-            <h3>Agricultura Regenerativa</h3>
-            <p>Recuperação e preservação do solo.</p>
-        </div>
+                                                                                                                                                                                                                                                                                                                                                                                            <section id="contato">
 
-        <div class="card">
-            <h3>Inovação Tecnológica</h3>
-            <p>Tecnologias para produzir mais com menos impacto.</p>
-        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                <div class="balao">
 
-        <div class="card">
-            <h3>Educação Ambiental</h3>
-            <p>Conscientização sobre práticas sustentáveis.</p>
-        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <h2>Contato</h2>
 
-    </div>
-</section>
+                                                                                                                                                                                                                                                                                                                                                                                                                <p>
+                                                                                                                                                                                                                                                                                                                                                                                                                            Como o agronegócio pode crescer economicamente sem comprometer os recursos naturais?
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </p>
 
-<form id="formContato">
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <form id="formContato">
 
- <input
-  type="text"
- placeholder="Nome"         
- required
- >
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <input
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        type="text"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        placeholder="Nome"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        required
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    >
 
-  <input
-   type="email"
- placeholder="Email"
-  required
-    >
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <input
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                type="email"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                placeholder="Email"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                required
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            >
 
-    <textarea
-    rows="5"
-    placeholder="Mensagem"        
- required
-   >
-</textarea>
-                                                                                                
-    <button type="submit">
-      Enviar
-   </button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <textarea
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        rows="5"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        placeholder="Mensagem"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        required
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ></textarea>
 
-   <div id="sucesso" class="mensagem-sucesso">
-  ✅ Mensagem enviada com sucesso!
-             </div>
-   </form>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <button type="submit">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Enviar
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </button>
 
-<footer>
-    <p>Agro Forte, Futuro Sustentável © 2026</p>
-</footer>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="sucesso" class="mensagem-sucesso">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ✅ Mensagem enviada com sucesso!
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
 
-</body>
-</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </form>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <footer>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Site educativo sobre sustentabilidade no agronegócio
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </p>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </footer>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <script src="script.js"></script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </html>
