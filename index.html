@@ -6,6 +6,31 @@
     <title>Agro Forte, Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+
+    const formulario =
+    document.getElementById("formContato");
+
+    const mensagem =
+    document.getElementById("sucesso");
+
+    formulario.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+            mensagem.style.display = "block";
+
+                formulario.reset();
+
+                    setTimeout(() => {
+                            mensagem.style.display = "none";
+                                }, 5000);
+
+                                });
+
+                                </script>
 <body>
 
 <header>
@@ -144,20 +169,35 @@
     </div>
 </section>
 
-<section id="contato" class="container">
-    <h2>Contato e Conscientização</h2>
+<form id="formContato">
 
-    <p class="pergunta">
-        Como o agronegócio pode crescer economicamente sem comprometer os recursos naturais das futuras gerações?
-    </p>
+ <input
+  type="text"
+ placeholder="Nome"         
+ required
+ >
 
-    <form>
-        <input type="text" placeholder="Nome">
-        <input type="email" placeholder="E-mail">
-        <textarea placeholder="Mensagem"></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-</section>
+  <input
+   type="email"
+ placeholder="Email"
+  required
+    >
+
+    <textarea
+    rows="5"
+    placeholder="Mensagem"        
+ required
+   >
+</textarea>
+                                                                                                
+    <button type="submit">
+      Enviar
+   </button>
+
+   <div id="sucesso" class="mensagem-sucesso">
+  ✅ Mensagem enviada com sucesso!
+             </div>
+   </form>
 
 <footer>
     <p>Agro Forte, Futuro Sustentável © 2026</p>
