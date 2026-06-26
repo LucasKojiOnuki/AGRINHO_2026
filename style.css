@@ -174,3 +174,24 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                     transform:translateY(0);
                                                                                                                                                                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                                                                                                                                                                         }
+    /* Estilo das imagens */
+
+    .imagem-secao{
+        width:100%;
+            max-width:900px;
+                display:block;
+                    margin:30px auto;
+                        border-radius:20px;
+
+                            box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+                                transition:all .5s ease;
+                                }
+
+                                /* Efeito ao passar o mouse */
+
+                                .imagem-secao:hover{
+                                    transform:scale(1.02);
+
+                                        box-shadow:0 20px 40px rgba(0,0,0,.25);
+                                        }
