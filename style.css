@@ -1,197 +1,1247 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* ==========================================================
+   IMPORTAÇÃO DA FONTE
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   RESET
+========================================================== */
 
 *{
     margin:0;
-        padding:0;
-            box-sizing:border-box;
-            }
+    padding:0;
+    box-sizing:border-box;
+}
 
-            html{
-                scroll-behavior:smooth;
-                }
+html{
+    scroll-behavior:smooth;
+}
 
-                body{
-                    font-family:'Poppins',sans-serif;
-                        background:#fdfdfd;
-                            color:#35a03b;
-                                line-height:1.7;
-                                }
+body{
 
-                                header{
-                                    position:sticky;
-                                        top:0;
-                                            background:rgb(50,167,46);
-                                                padding:20px;
-                                                    box-shadow:0 2px 15px rgba(1,46,5,.24);
-                                                        z-index:1000;
-                                                        }
+    font-family:'Poppins',sans-serif;
 
-                                                        h1{
-                                                            color:white;
-                                                                margin-bottom:15px;
-                                                                }
+    background:#f5f7f2;
 
-                                                                nav{
-                                                                    display:flex;
-                                                                        flex-wrap:wrap;
-                                                                            gap:20px;
-                                                                            }
+    color:#444;
 
-                                                                            nav a{
-                                                                                text-decoration:none;
-                                                                                    color:white;
-                                                                                        font-weight:500;
-                                                                                            position:relative;
-                                                                                            }
+    line-height:1.8;
 
-                                                                                            nav a::after{
-                                                                                                content:'';
-                                                                                                    position:absolute;
-                                                                                                        width:0;
-                                                                                                            height:2px;
-                                                                                                                background:white;
-                                                                                                                    left:0;
-                                                                                                                        bottom:-5px;
-                                                                                                                            transition:.4s;
-                                                                                                                            }
+}
 
-                                                                                                                            nav a:hover::after{
-                                                                                                                                width:100%;
-                                                                                                                                }
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
 
-                                                                                                                                section{
-                                                                                                                                    padding:60px 40px;
-                                                                                                                                        max-width:1100px;
-                                                                                                                                            margin:auto;
+header{
 
-                                                                                                                                                opacity:0;
-                                                                                                                                                    transform:translateY(30px);
-                                                                                                                                                        animation:fadeUp .8s ease forwards;
-                                                                                                                                                        }
+    position:fixed;
 
-                                                                                                                                                        h2{
-                                                                                                                                                            color:#2e7d32;
-                                                                                                                                                                margin-bottom:20px;
-                                                                                                                                                                }
+    top:0;
 
-                                                                                                                                                                p, li{
-                                                                                                                                                                    color:#555;
-                                                                                                                                                                    }
+    left:0;
 
-                                                                                                                                                                    ul{
-                                                                                                                                                                        padding-left:25px;
-                                                                                                                                                                        }
+    width:100%;
 
-                                                                                                                                                                        .balao{
-                                                                                                                                                                            background:white;
-                                                                                                                                                                                padding:30px;
-                                                                                                                                                                                    border-radius:20px;
-                                                                                                                                                                                        border-left:6px solid #35a03b;
-                                                                                                                                                                                            box-shadow:0 10px 30px rgba(0,0,0,.08);
-                                                                                                                                                                                                transition:.4s;
-                                                                                                                                                                                                }
+    background:#2e7d32;
 
-                                                                                                                                                                                                .balao:hover{
-                                                                                                                                                                                                    transform:translateY(-5px);
-                                                                                                                                                                                                    }
+    padding:18px 8%;
 
-                                                                                                                                                                                                    form{
-                                                                                                                                                                                                        margin-top:20px;
-                                                                                                                                                                                                        }
+    display:flex;
 
-                                                                                                                                                                                                        input,
-                                                                                                                                                                                                        textarea{
-                                                                                                                                                                                                            width:100%;
-                                                                                                                                                                                                                padding:14px;
-                                                                                                                                                                                                                    margin-bottom:15px;
-                                                                                                                                                                                                                        border:1px solid #ddd;
-                                                                                                                                                                                                                            border-radius:12px;
-                                                                                                                                                                                                                                transition:.3s;
-                                                                                                                                                                                                                                }
+    justify-content:space-between;
 
-                                                                                                                                                                                                                                input:focus,
-                                                                                                                                                                                                                                textarea:focus{
-                                                                                                                                                                                                                                    outline:none;
-                                                                                                                                                                                                                                        border-color:#4caf50;
-                                                                                                                                                                                                                                            box-shadow:0 0 15px rgba(76,175,80,.2);
-                                                                                                                                                                                                                                            }
+    align-items:center;
 
-                                                                                                                                                                                                                                            button{
-                                                                                                                                                                                                                                                background:#2e7d32;
-                                                                                                                                                                                                                                                    color:white;
-                                                                                                                                                                                                                                                        border:none;
-                                                                                                                                                                                                                                                            padding:14px 28px;
-                                                                                                                                                                                                                                                                border-radius:12px;
-                                                                                                                                                                                                                                                                    cursor:pointer;
-                                                                                                                                                                                                                                                                        transition:.3s;
-                                                                                                                                                                                                                                                                        }
+    z-index:999;
 
-                                                                                                                                                                                                                                                                        button:hover{
-                                                                                                                                                                                                                                                                            transform:translateY(-3px);
-                                                                                                                                                                                                                                                                                background:#388e3c;
-                                                                                                                                                                                                                                                                                }
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 
-                                                                                                                                                                                                                                                                                .mensagem-sucesso{
-                                                                                                                                                                                                                                                                                    display:none;
-                                                                                                                                                                                                                                                                                        margin-top:15px;
-                                                                                                                                                                                                                                                                                            padding:15px;
-                                                                                                                                                                                                                                                                                                background:#e8f5e9;
-                                                                                                                                                                                                                                                                                                    color:#2e7d32;
-                                                                                                                                                                                                                                                                                                        border-left:5px solid #2e7d32;
-                                                                                                                                                                                                                                                                                                            border-radius:10px;
-                                                                                                                                                                                                                                                                                                                font-weight:600;
-                                                                                                                                                                                                                                                                                                                    animation:aparecer .5s ease;
-                                                                                                                                                                                                                                                                                                                    }
+}
 
-                                                                                                                                                                                                                                                                                                                    footer{
-                                                                                                                                                                                                                                                                                                                        text-align:center;
-                                                                                                                                                                                                                                                                                                                            padding:30px;
-                                                                                                                                                                                                                                                                                                                                background:#2e7d32;
-                                                                                                                                                                                                                                                                                                                                    color:white;
-                                                                                                                                                                                                                                                                                                                                        margin-top:50px;
-                                                                                                                                                                                                                                                                                                                                        }
+.logo{
 
-                                                                                                                                                                                                                                                                                                                                        @keyframes fadeUp{
-                                                                                                                                                                                                                                                                                                                                            from{
-                                                                                                                                                                                                                                                                                                                                                    opacity:0;
-                                                                                                                                                                                                                                                                                                                                                            transform:translateY(30px);
-                                                                                                                                                                                                                                                                                                                                                                }
+    display:flex;
 
-                                                                                                                                                                                                                                                                                                                                                                    to{
-                                                                                                                                                                                                                                                                                                                                                                            opacity:1;
-                                                                                                                                                                                                                                                                                                                                                                                    transform:translateY(0);
-                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                        }
+    align-items:center;
 
-                                                                                                                                                                                                                                                                                                                                                                                        @keyframes aparecer{
-                                                                                                                                                                                                                                                                                                                                                                                            from{
-                                                                                                                                                                                                                                                                                                                                                                                                    opacity:0;
-                                                                                                                                                                                                                                                                                                                                                                                                            transform:translateY(10px);
-                                                                                                                                                                                                                                                                                                                                                                                                                }
+    gap:15px;
 
-                                                                                                                                                                                                                                                                                                                                                                                                                    to{
-                                                                                                                                                                                                                                                                                                                                                                                                                            opacity:1;
-                                                                                                                                                                                                                                                                                                                                                                                                                                    transform:translateY(0);
-                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-    /* Estilo das imagens */
+}
 
-    .imagem-secao{
-        width:100%;
-            max-width:900px;
-                display:block;
-                    margin:30px auto;
-                        border-radius:20px;
+.logo i{
 
-                            box-shadow:0 10px 30px rgba(0,0,0,.15);
+    font-size:35px;
 
-                                transition:all .5s ease;
-                                }
+    color:#fff;
 
-                                /* Efeito ao passar o mouse */
+}
 
-                                .imagem-secao:hover{
-                                    transform:scale(1.02);
+.logo h1{
 
-                                        box-shadow:0 20px 40px rgba(0,0,0,.25);
-                                        }
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   MENU
+========================================================== */
+
+nav{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:white;
+
+    transition:.4s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+nav a:hover{
+
+    color:#d9ffd6;
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:140px 8% 80px;
+
+    gap:50px;
+
+}
+
+.hero-texto{
+
+    flex:1;
+
+}
+
+.hero-texto h2{
+
+    font-size:55px;
+
+    color:#2e7d32;
+
+    margin-bottom:25px;
+
+    line-height:1.2;
+
+}
+
+.hero-texto p{
+
+    font-size:19px;
+
+    margin-bottom:35px;
+
+    color:#555;
+
+}
+
+.botao-principal{
+
+    display:inline-block;
+
+    background:#2e7d32;
+
+    color:white;
+
+    padding:15px 35px;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    transition:.4s;
+
+    font-weight:600;
+
+}
+
+.botao-principal:hover{
+
+    transform:translateY(-4px);
+
+    background:#43a047;
+
+    box-shadow:0 15px 25px rgba(46,125,50,.3);
+
+}
+
+.hero-imagem{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.hero-imagem img{
+
+    width:100%;
+
+    max-width:600px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+    transition:.5s;
+
+}
+
+.hero-imagem img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ==========================================================
+   SEÇÕES
+========================================================== */
+
+section{
+
+    padding:90px 8%;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    color:#2e7d32;
+
+    font-size:38px;
+
+    margin-bottom:35px;
+
+}
+
+section p{
+
+    text-align:justify;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================================
+   IMAGENS
+========================================================== */
+
+.imagem-secao{
+
+    display:block;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:35px auto;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.imagem-secao:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:30px;
+
+    margin-top:45px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.card i{
+
+    font-size:45px;
+
+    color:#2e7d32;
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+    color:#2e7d32;
+
+}
+
+.card p{
+
+    text-align:center;
+
+}
+
+/* ==========================================================
+   BALÕES
+========================================================== */
+
+.balao{
+
+    background:white;
+
+    padding:35px;
+
+    border-left:8px solid #43a047;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================================
+   ANIMAÇÃO GERAL
+========================================================== */
+
+section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   LINHA DO TEMPO
+========================================================== */
+
+.timeline{
+
+    margin-top:50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.timeline-item{
+
+    flex:1;
+
+    min-width:180px;
+
+    background:#ffffff;
+
+    border-top:6px solid #43a047;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.timeline-item h3{
+
+    color:#2e7d32;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================================
+   GRÁFICO
+========================================================== */
+
+.grafico{
+
+    margin-top:40px;
+
+}
+
+.barra{
+
+    margin-bottom:28px;
+
+}
+
+.barra span{
+
+    display:block;
+
+    font-weight:600;
+
+    color:#2e7d32;
+
+    margin-bottom:10px;
+
+}
+
+.progresso{
+
+    width:100%;
+
+    height:28px;
+
+    background:#d9d9d9;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.progresso span{
+
+    position:absolute;
+
+    right:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* Barras */
+
+.p90{
+
+    width:90%;
+
+    background:linear-gradient(90deg,#43a047,#2e7d32);
+
+    height:100%;
+
+    border-radius:20px;
+
+    animation:barra90 2s;
+
+}
+
+.p82{
+
+    width:82%;
+
+    background:linear-gradient(90deg,#43a047,#2e7d32);
+
+    height:100%;
+
+    border-radius:20px;
+
+    animation:barra82 2s;
+
+}
+
+.p75{
+
+    width:75%;
+
+    background:linear-gradient(90deg,#66bb6a,#388e3c);
+
+    height:100%;
+
+    border-radius:20px;
+
+    animation:barra75 2s;
+
+}
+
+.p68{
+
+    width:68%;
+
+    background:linear-gradient(90deg,#81c784,#43a047);
+
+    height:100%;
+
+    border-radius:20px;
+
+    animation:barra68 2s;
+
+}
+
+@keyframes barra90{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:90%;
+
+    }
+
+}
+
+@keyframes barra82{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:82%;
+
+    }
+
+}
+
+@keyframes barra75{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:75%;
+
+    }
+
+}
+
+@keyframes barra68{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:68%;
+
+    }
+
+}
+
+/* ==========================================================
+   QUIZ
+========================================================== */
+
+#quiz form{
+
+    margin-top:30px;
+
+}
+
+#quiz label{
+
+    display:block;
+
+    margin:15px 0;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+}
+
+#quiz input[type="radio"]{
+
+    margin-right:10px;
+
+    transform:scale(1.15);
+
+}
+
+#resultadoQuiz{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#2e7d32;
+
+}
+
+#verificarQuiz{
+
+    margin-top:15px;
+
+}
+
+/* ==========================================================
+   CALCULADORA
+========================================================== */
+
+#calculadora input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:25px 0;
+
+    border:2px solid #43a047;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+#calculadora input:focus{
+
+    outline:none;
+
+    box-shadow:0 0 15px rgba(67,160,71,.3);
+
+}
+
+#calcular{
+
+    margin-bottom:20px;
+
+}
+
+#resultadoCalculadora{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#2e7d32;
+
+}
+
+/* ==========================================================
+   VÍDEO
+========================================================== */
+
+.video{
+
+    max-width:1000px;
+
+    margin:40px auto;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+
+}
+
+.video iframe{
+
+    display:block;
+
+    width:100%;
+
+    border:none;
+
+}
+
+/* ==========================================================
+   FORMULÁRIO
+========================================================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:30px;
+
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    border:2px solid #d9d9d9;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.35s;
+
+    resize:none;
+
+    background:#fff;
+
+}
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:#43a047;
+
+    box-shadow:0 0 18px rgba(67,160,71,.25);
+
+}
+
+button{
+
+    background:#2e7d32;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:40px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    background:#43a047;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(46,125,50,.30);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================================================
+   MENSAGEM DE SUCESSO
+========================================================== */
+
+.mensagem-sucesso{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    background:#d4edda;
+
+    color:#155724;
+
+    border:2px solid #28a745;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    animation:fadeMensagem .6s;
+
+}
+
+@keyframes fadeMensagem{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   PERGUNTA NORTEADORA
+========================================================== */
+
+blockquote{
+
+    background:#ffffff;
+
+    border-left:8px solid #43a047;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    font-size:22px;
+
+    font-style:italic;
+
+    color:#2e7d32;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================================
+   FONTES
+========================================================== */
+
+#fontes ul{
+
+    margin-top:30px;
+
+    padding-left:25px;
+
+}
+
+#fontes li{
+
+    margin-bottom:12px;
+
+    font-size:17px;
+
+}
+
+/* ==========================================================
+   BOTÃO VOLTAR AO TOPO
+========================================================== */
+
+#topo{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:60px;
+
+    height:60px;
+
+    background:#2e7d32;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+#topo:hover{
+
+    background:#43a047;
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+/* ==========================================================
+   RODAPÉ
+========================================================== */
+
+footer{
+
+    background:#1b5e20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    margin-top:80px;
+
+}
+
+footer h3{
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+footer hr{
+
+    width:250px;
+
+    margin:25px auto;
+
+    border:none;
+
+    border-top:2px solid rgba(255,255,255,.25);
+
+}
+
+footer p{
+
+    color:#f1f1f1;
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================================
+   ANIMAÇÕES EXTRAS
+========================================================== */
+
+.card,
+.timeline-item,
+.balao{
+
+    transition:.35s;
+
+}
+
+.card:hover,
+.timeline-item:hover,
+.balao:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.imagem-secao{
+
+    animation:zoomEntrada 1s;
+
+}
+
+@keyframes zoomEntrada{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media(max-width:1000px){
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero-texto h2{
+
+    font-size:42px;
+
+}
+
+.hero-imagem img{
+
+    max-width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:20px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+section{
+
+    padding:70px 25px;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.timeline{
+
+    flex-direction:column;
+
+}
+
+.timeline-item{
+
+    width:100%;
+
+}
+
+.hero-texto h2{
+
+    font-size:34px;
+
+}
+
+blockquote{
+
+    font-size:18px;
+
+}
+
+.video iframe{
+
+    height:260px;
+
+}
+
+#topo{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:24px;
+
+    right:20px;
+
+    bottom:20px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.logo h1{
+
+    font-size:22px;
+
+}
+
+.hero{
+
+    padding-top:170px;
+
+}
+
+.hero-texto p{
+
+    font-size:16px;
+
+}
+
+button{
+
+    width:100%;
+
+}
+
+}
