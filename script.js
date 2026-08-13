@@ -1,295 +1,592 @@
-// =========================================
+// =========================================================
 // AGRO FORTE - FUTURO SUSTENTÁVEL
-// script.js
-// =========================================
+// SCRIPT PRINCIPAL
+// =========================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // ==========================
-    // FORMULÁRIO
-    // ==========================
+    // =====================================================
+    // QUIZ
+    // =====================================================
 
-    const formulario = document.getElementById("formContato");
-    const mensagem = document.getElementById("sucesso");
+    const quizForm = document.getElementById("quizForm");
+    const botaoQuiz = document.getElementById("verificarQuiz");
+    const resultadoQuiz = document.getElementById("resultadoQuiz");
+    const explicacaoQuiz = document.getElementById("explicacaoQuiz");
+
+    let quizRespondido = false;
+
+    if (quizForm && botaoQuiz) {
+
+        // Impede trocar a alternativa depois de selecionada
+        const alternativas = document.querySelectorAll(
+            'input[name="quiz"]'
+        );
+
+        alternativas.forEach(function (alternativa) {
+
+            alternativa.addEventListener("change", function () {
+
+                if (quizRespondido) {
+                    return;
+                }
+
+                alternativas.forEach(function (item) {
+
+                    if (item !== alternativa) {
+                        item.disabled = true;
+                    }
+
+                });
+
+                quizRespondido = true;
+
+            });
+
+        });
+
+
+        botaoQuiz.addEventListener("click", function () {
+
+            const respostaSelecionada =
+                document.querySelector(
+                    'input[name="quiz"]:checked'
+                );
+
+            if (!respostaSelecionada) {
+
+                resultadoQuiz.innerHTML =
+                    "⚠️ Selecione uma alternativa antes de continuar.";
+
+                resultadoQuiz.style.color = "#d32f2f";
+
+                return;
+
+            }
+
+
+            // Impede clicar novamente
+            botaoQuiz.disabled = true;
+
+            botaoQuiz.innerText = "Resposta enviada";
+
+
+            if (respostaSelecionada.value === "2") {
+
+                resultadoQuiz.innerHTML =
+                    "✅ Parabéns! Você acertou!";
+
+                resultadoQuiz.style.color = "#2e7d32";
+
+                explicacaoQuiz.style.display = "block";
+
+            }
+
+            else {
+
+                resultadoQuiz.innerHTML =
+                    "❌ Resposta incorreta.";
+
+                resultadoQuiz.style.color = "#d32f2f";
+
+                explicacaoQuiz.style.display = "block";
+
+            }
+
+        });
+
+    }
+
+
+    // =====================================================
+    // CALCULADORA AMBIENTAL
+    // =====================================================
+
+    const botaoCalcular =
+        document.getElementById("calcular");
+
+    const campoArvores =
+        document.getElementById("arvores");
+
+    const resultadoCalculadora =
+        document.getElementById("resultadoCalculadora");
+
+
+    if (
+        botaoCalcular &&
+        campoArvores &&
+        resultadoCalculadora
+    ) {
+
+        botaoCalcular.addEventListener("click", function () {
+
+            const quantidade =
+                Number(campoArvores.value);
+
+
+            if (
+                campoArvores.value === "" ||
+                quantidade <= 0 ||
+                !Number.isFinite(quantidade)
+            ) {
+
+                resultadoCalculadora.innerHTML =
+                    "⚠️ Digite uma quantidade válida de árvores.";
+
+                resultadoCalculadora.style.color =
+                    "#d32f2f";
+
+                return;
+
+            }
+
+
+            const carbono =
+                quantidade * 22;
+
+
+            resultadoCalculadora.innerHTML =
+                "🌳 Aproximadamente <strong>" +
+                carbono.toLocaleString("pt-BR") +
+                " kg de CO₂</strong> podem ser absorvidos por ano.";
+
+            resultadoCalculadora.style.color =
+                "#2e7d32";
+
+        });
+
+    }
+
+
+    // =====================================================
+    // FORMULÁRIO DE CONTATO
+    // =====================================================
+
+    const formulario =
+        document.getElementById("formContato");
+
+    const mensagemSucesso =
+        document.getElementById("sucesso");
+
+
+    let formularioEnviado = false;
+
 
     if (formulario) {
 
-        formulario.addEventListener("submit", function (event) {
+        formulario.addEventListener(
+            "submit",
+            function (event) {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            mensagem.style.display = "block";
 
-            formulario.reset();
+                // =============================================
+                // IMPEDIR SEGUNDO ENVIO
+                // =============================================
 
-            setTimeout(() => {
+                if (formularioEnviado) {
 
-                mensagem.style.display = "none";
+                    return;
 
-            }, 5000);
+                }
 
-        });
+
+                // =============================================
+                // PEGAR CAMPOS
+                // =============================================
+
+                const nome =
+                    formulario.querySelector(
+                        'input[type="text"]'
+                    );
+
+                const email =
+                    formulario.querySelector(
+                        'input[type="email"]'
+                    );
+
+                const textarea =
+                    formulario.querySelector(
+                        "textarea"
+                    );
+
+
+                // =============================================
+                // VALIDAÇÃO DO NOME
+                // =============================================
+
+                if (
+                    !nome ||
+                    nome.value.trim().length < 3
+                ) {
+
+                    alert(
+                        "Digite um nome válido."
+                    );
+
+                    nome.focus();
+
+                    return;
+
+                }
+
+
+                // =============================================
+                // VALIDAÇÃO DO EMAIL
+                // =============================================
+
+                const emailRegex =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+
+                if (
+                    !email ||
+                    !emailRegex.test(
+                        email.value.trim()
+                    )
+                ) {
+
+                    alert(
+                        "Digite um endereço de email válido. Exemplo: nome@email.com"
+                    );
+
+                    email.focus();
+
+                    return;
+
+                }
+
+
+                // =============================================
+                // VALIDAÇÃO DA MENSAGEM
+                // =============================================
+
+                if (
+                    !textarea ||
+                    textarea.value.trim().length < 10
+                ) {
+
+                    alert(
+                        "Digite uma mensagem com pelo menos 10 caracteres."
+                    );
+
+                    textarea.focus();
+
+                    return;
+
+                }
+
+
+                // =============================================
+                // FORMULÁRIO APROVADO
+                // =============================================
+
+                formularioEnviado = true;
+
+
+                // Desabilitar todos os campos
+
+                const campos =
+                    formulario.querySelectorAll(
+                        "input, textarea, button"
+                    );
+
+
+                campos.forEach(function (campo) {
+
+                    campo.disabled = true;
+
+                });
+
+
+                // Alterar botão
+
+                const botaoEnviar =
+                    formulario.querySelector(
+                        'button[type="submit"]'
+                    );
+
+
+                if (botaoEnviar) {
+
+                    botaoEnviar.innerHTML =
+                        "✓ Enviado";
+
+                }
+
+
+                // =============================================
+                // ANIMAÇÃO DA MENSAGEM
+                // =============================================
+
+                if (mensagemSucesso) {
+
+                    mensagemSucesso.style.display =
+                        "block";
+
+                    mensagemSucesso.style.opacity =
+                        "0";
+
+                    mensagemSucesso.style.transform =
+                        "translateY(20px)";
+
+
+                    requestAnimationFrame(function () {
+
+                        mensagemSucesso.style.transition =
+                            "opacity .6s ease, transform .6s ease";
+
+                        mensagemSucesso.style.opacity =
+                            "1";
+
+                        mensagemSucesso.style.transform =
+                            "translateY(0)";
+
+                    });
+
+                }
+
+            }
+        );
 
     }
 
-    // ==========================
-    // QUIZ
-    // ==========================
 
-    const botaoQuiz = document.getElementById("verificarQuiz");
-
-    if (botaoQuiz) {
-
-        botaoQuiz.addEventListener("click", () => {
-
-            const resposta =
-                document.querySelector('input[name="quiz"]:checked');
-
-            const resultado =
-                document.getElementById("resultadoQuiz");
-
-            if (!resposta) {
-
-                resultado.style.color = "#d32f2f";
-
-                resultado.innerHTML =
-                    "⚠️ Selecione uma alternativa.";
-
-                return;
-
-            }
-
-            if (resposta.value === "2") {
-
-                resultado.style.color = "#2e7d32";
-
-                resultado.innerHTML =
-                    "✅ Parabéns! Você acertou.";
-
-            }
-
-            else {
-
-                resultado.style.color = "#d32f2f";
-
-                resultado.innerHTML =
-                    "❌ Resposta incorreta. A correta é Irrigação Inteligente.";
-
-            }
-
-        });
-
-    }
-
-    // ==========================
-    // CALCULADORA AMBIENTAL
-    // ==========================
-
-    const calcular =
-        document.getElementById("calcular");
-
-    if (calcular) {
-
-        calcular.addEventListener("click", () => {
-
-            const quantidade =
-                Number(document.getElementById("arvores").value);
-
-            const resultado =
-                document.getElementById("resultadoCalculadora");
-
-            if (quantidade <= 0 || isNaN(quantidade)) {
-
-                resultado.innerHTML =
-                    "Digite um valor válido.";
-
-                resultado.style.color = "#d32f2f";
-
-                return;
-
-            }
-
-            const carbono = quantidade * 22;
-
-            resultado.style.color = "#2e7d32";
-
-            resultado.innerHTML =
-
-                "🌳 Aproximadamente <strong>" +
-
-                carbono.toLocaleString("pt-BR") +
-
-                " kg de CO₂</strong> podem ser absorvidos por ano.";
-
-        });
-
-    }
-
-    // ==========================
+    // =====================================================
     // BOTÃO VOLTAR AO TOPO
-    // ==========================
+    // =====================================================
 
-    const topo =
+    const botaoTopo =
         document.getElementById("topo");
 
-    if (topo) {
 
-        topo.style.display = "none";
+    if (botaoTopo) {
 
-        window.addEventListener("scroll", () => {
+        botaoTopo.style.display = "none";
 
-            if (window.scrollY > 500) {
 
-                topo.style.display = "flex";
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 500) {
+
+                    botaoTopo.style.display =
+                        "flex";
+
+                }
+
+                else {
+
+                    botaoTopo.style.display =
+                        "none";
+
+                }
 
             }
-
-            else {
-
-                topo.style.display = "none";
-
-            }
-
-        });
+        );
 
     }
 
-    // ==========================
+
+    // =====================================================
     // ANIMAÇÃO DAS SEÇÕES
-    // ==========================
+    // =====================================================
 
     const secoes =
         document.querySelectorAll("section");
 
+
     const observador =
-        new IntersectionObserver((entradas) => {
+        new IntersectionObserver(
 
-            entradas.forEach((entrada) => {
+            function (entradas) {
 
-                if (entrada.isIntersecting) {
+                entradas.forEach(
+                    function (entrada) {
 
-                    entrada.target.style.opacity = "1";
+                        if (
+                            entrada.isIntersecting
+                        ) {
 
-                    entrada.target.style.transform = "translateY(0)";
+                            entrada.target.classList.add(
+                                "visivel"
+                            );
 
-                }
+                        }
 
-            });
+                    }
+                );
 
-        }, {
+            },
 
-            threshold: 0.15
+            {
+                threshold: 0.15
+            }
 
-        });
+        );
 
-    secoes.forEach((secao) => {
 
-        secao.style.opacity = "0";
-
-        secao.style.transform = "translateY(40px)";
-
-        secao.style.transition = ".8s";
+    secoes.forEach(function (secao) {
 
         observador.observe(secao);
 
     });
 
-    // ==========================
-    // CONTADORES ANIMADOS
-    // ==========================
 
-    const numeros =
-        document.querySelectorAll(".card h3");
+    // =====================================================
+    // CONTADORES
+    // =====================================================
 
-    numeros.forEach((numero) => {
+    const cards =
+        document.querySelectorAll(
+            ".estatisticas .card h3"
+        );
 
-        const texto = numero.innerText;
 
-        const valor = parseInt(texto.replace(/\D/g, ""));
+    cards.forEach(function (elemento) {
 
-        if (!isNaN(valor)) {
+        const textoOriginal =
+            elemento.textContent.trim();
 
-            let atual = 0;
 
-            const incremento = Math.ceil(valor / 60);
+        const valor =
+            parseInt(
+                textoOriginal.replace(/\D/g, "")
+            );
 
-            const intervalo = setInterval(() => {
+
+        if (
+            isNaN(valor) ||
+            valor === 0
+        ) {
+
+            return;
+
+        }
+
+
+        let atual = 0;
+
+        const duracao = 1500;
+
+        const intervalo =
+            30;
+
+        const passos =
+            duracao / intervalo;
+
+        const incremento =
+            valor / passos;
+
+
+        const timer =
+            setInterval(function () {
 
                 atual += incremento;
+
 
                 if (atual >= valor) {
 
                     atual = valor;
 
-                    clearInterval(intervalo);
+                    clearInterval(timer);
 
                 }
 
-                if (texto.includes("%")) {
 
-                    numero.innerText = atual + "%";
+                const numero =
+                    Math.floor(atual);
+
+
+                if (
+                    textoOriginal.includes("%")
+                ) {
+
+                    elemento.textContent =
+                        numero + "%";
 
                 }
 
-                else if (texto.toLowerCase().includes("milhões")) {
+                else if (
+                    textoOriginal
+                        .toLowerCase()
+                        .includes("milhões")
+                ) {
 
-                    numero.innerText = atual + " Milhões";
+                    elemento.textContent =
+                        numero + " Milhões";
 
                 }
 
                 else {
 
-                    numero.innerText = atual;
+                    elemento.textContent =
+                        numero;
 
                 }
 
-            }, 35);
-
-        }
+            }, intervalo);
 
     });
 
-    // ==========================
-    // EFEITO DE DIGITAÇÃO
-    // ==========================
+
+    // =====================================================
+    // EFEITO DE DIGITAÇÃO DO HERO
+    // =====================================================
 
     const titulo =
-        document.querySelector(".hero-texto h2");
+        document.querySelector(
+            ".hero-texto h2"
+        );
+
 
     if (titulo) {
 
-        const textoOriginal = titulo.innerHTML
-            .replace(/<br>/g, "\n");
+        const conteudoOriginal =
+            titulo.innerHTML;
 
-        titulo.innerHTML = "";
 
-        let indice = 0;
+        // Só executa uma vez
 
-        function escrever() {
+        if (!titulo.dataset.animado) {
 
-            if (indice < textoOriginal.length) {
+            titulo.dataset.animado = "true";
 
-                if (textoOriginal[indice] === "\n") {
+            titulo.innerHTML = "";
 
-                    titulo.innerHTML += "<br>";
+            let indice = 0;
+
+
+            function escreverTitulo() {
+
+                if (
+                    indice <
+                    conteudoOriginal.length
+                ) {
+
+                    titulo.innerHTML =
+                        conteudoOriginal.substring(
+                            0,
+                            indice + 1
+                        );
+
+                    indice++;
+
+                    setTimeout(
+                        escreverTitulo,
+                        35
+                    );
 
                 }
-
-                else {
-
-                    titulo.innerHTML += textoOriginal[indice];
-
-                }
-
-                indice++;
-
-                setTimeout(escrever, 45);
 
             }
 
-        }
 
-        escrever();
+            escreverTitulo();
+
+        }
 
     }
 
